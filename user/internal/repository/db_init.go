@@ -22,7 +22,7 @@ func InitDB() {
 	password := viper.GetString("mysql.password")
 	charset := viper.GetString("mysql.charset")
 
-	dsn := strings.Join([]string{username, ":", password, "@tcp(", host, ":", port, ")/", databse, "+?charcharset=", charset + "&parseTime=true"}, "")
+	dsn := strings.Join([]string{username, ":", password, "@tcp(", host, ":", port, ")/", databse, "?charset=", charset + "&parseTime=true"}, "")
 
 	err := Database(dsn)
 
