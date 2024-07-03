@@ -26,11 +26,11 @@ type Register struct {
 }
 
 // NewRegister 基于ETCD创建一个register
-func NewRegister(etcdAddrs []string, logger logrus.Logger) *Register {
+func NewRegister(etcdAddrs []string, logger *logrus.Logger) *Register {
 	return &Register{
 		EtcdAddres:  etcdAddrs,
 		DialTimeout: 3,
-		logger:      &logger,
+		logger:      logger,
 	}
 }
 
