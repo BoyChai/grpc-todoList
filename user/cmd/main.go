@@ -4,6 +4,7 @@ import (
 	"net"
 	"user/config"
 	"user/discovery"
+	"user/internal/handler"
 	"user/internal/repository"
 	"user/internal/service"
 
