@@ -5,6 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"strings"
+
+	"google.golang.org/grpc/resolver"
 )
 
 type Server struct {
@@ -44,4 +46,11 @@ func SplitPath(path string) (Server, error) {
 	return server, nil
 }
 
-// func Exist(l [])
+func Exist(l []resolver.Address, addr resolver.Address) bool {
+	for i := range l {
+		if l[i].Addr == addr.Addr {
+			return true
+		}
+	}
+	return false
+}
